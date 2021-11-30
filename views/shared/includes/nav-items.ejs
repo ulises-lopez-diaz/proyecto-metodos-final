@@ -1,0 +1,29 @@
+<ul class="nav-items">
+  <% if (!locals.isAdmin) { %>
+    <li><a href="/">Tienda</a></li>
+    <li><a href="/cart">Carrito <span class="badge"><%= locals.cart.totalQuantity %></span></a></li>
+  <% } %>
+
+  <% if (locals.isAuth && !locals.isAdmin) { %>
+    <li><a href="/orders">Pedidos</a></li>
+  <% } %>
+
+  <% if (locals.isAdmin) { %>
+    <li><a href="/admin/products">Manejar Productos</a></li>
+    <li><a href="/admin/orders">Manejar Pedidos</a></li>
+  <% } %>
+
+  <% if (!locals.isAuth) { %>
+    <li><a href="/signup">Crear Cuenta</a></li>
+    <li><a href="/login">Iniciar Sesion</a></li>
+  <% } %>
+
+  <% if (locals.isAuth) { %>
+    <li>
+      <form action="/logout" method="POST">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        <button>Cerrar Sesion</button>
+      </form>
+    </li>
+  <% } %>
+</ul>

@@ -1,0 +1,59 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Crear Cuenta'}) %>
+    <link rel="stylesheet" href="/styles/form.css">
+    <link rel="stylesheet" href="/styles/auth.css">
+
+</head>
+<body>
+    <%- include('../../shared/includes/header') %>
+    <main>
+        <h1>Crear cuenta</h1>
+        <% if (inputData.errorMessage) { %>
+            <section class="alert">
+                <h2>Input invalido</h2>
+                <p><%= inputData.errorMessage %></p>
+            </section>
+        <% } %>
+        <form action="/signup" method="POST">
+            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+            <p>
+                <label for="email">Correo</label>
+                <input type="email" id="email" name="email" value="<%= inputData.email %>" required>
+            </p>
+            <p>
+                <label for="confirm-email">Confirmar correo</label>
+                <input type="email" id="confirm-email" name="confirm-email" value="<%= inputData.confirmEmail %>" required>
+            </p>
+            <p>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" minlength="6" value="<%= inputData.password %>" required>
+            </p>
+            <hr>
+            <p>
+                <label for="fullname">Nombre Completo</label>
+                <input type="text" id="fullname" name="fullname" value="<%= inputData.fullname %>" required>
+            </p>
+            <p>
+                <label for="street">Calle</label>
+                <input type="text" id="street" name="street" value="<%= inputData.street %>" required>
+            </p>
+            <p>
+                <label for="postal">Codigo Postal</label>
+                <input 
+                type="text" 
+                id="postal" 
+                name="postal" 
+                minlength="5" 
+                maxlength="5"
+                value="<%= inputData.postal %>" 
+                required>
+            </p>
+            <p>
+                <label for="city">Ciudad</label>
+                <input type="text" id="city" name="city" value="<%= inputData.city %>" required>
+            </p>
+            <button class="btn">Crear cuenta</button>
+            <p id="switch-form"><a href="/login">Iniciar sesion</a></p>
+            
+        </form>
+    </main>
+<%- include('../../shared/includes/footer') %> 
