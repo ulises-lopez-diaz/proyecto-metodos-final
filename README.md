@@ -14,6 +14,11 @@ Las herramientas utilizadas en este proyecto son:
 * CSS - Hoja de estilos en cascada
 * Express.js - Utilizado como framework
 
+## Comandos para ejecutar
+* npm install express moongose morgan dotenv cors
+* npm install -D typescript @types/express @types/moongose @types/morgan @types/cors ts-node-dev
+* npm start
+
 ## Autores ✒️
 
 Realizado por:
@@ -22,3 +27,4 @@ Realizado por:
 * Mauricio Mendoza Reyes
 * André Mauricio Rubio Garcia 
 * Leonardo Daniel Ventimilla Salinas
+
