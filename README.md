@@ -15,9 +15,8 @@ Las herramientas utilizadas en este proyecto son:
 * Express.js - Utilizado como framework
 
 ## Comandos para ejecutar
-* npm install express moongose morgan dotenv cors
-* npm install -D typescript @types/express @types/moongose @types/morgan @types/cors ts-node-dev
-* npm start
+* npm install para instalar todos los paquetes utilizados en el proyecto
+* npm start para ejecutar el proyecto
 
 ## Autores ✒️
 
